@@ -8,7 +8,7 @@ using VerifyNG.DAL.Data;
 
 namespace VerifyNG.DAL.Repositories
 {
-    public class RepositoryBase<TEntity> where TEntity : class
+    public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : class
     {
         internal DataContext context;
         internal DbSet<TEntity> dbSet;

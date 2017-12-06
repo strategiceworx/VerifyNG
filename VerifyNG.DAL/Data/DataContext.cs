@@ -10,7 +10,7 @@ namespace VerifyNG.DAL.Data
 {
     public class DataContext : DbContext
     {
-        public DataContext() : base("DefaultConnection") { }
+        public DataContext() : base("VerifyNGConnection") { }
 
         /// <summary>
         ///  any entity to be persisted must be declared here.

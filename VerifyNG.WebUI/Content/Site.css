@@ -28,7 +28,7 @@ textarea {
     width: 100%;
 }
 
-.mainmenu.wrapper {
+.mainmenu-wrapper {
     background-color: #FFF;
     border-bottom: 4px solid #960000;
     z-index: 4;
@@ -80,4 +80,22 @@ footer {
     color: #dddddd;
     padding-top: 10px;
     font-size: 0.9em;
+}
+
+.section-breadcrumbs {
+    background: #2b943a;
+    background: rgba(26, 121, 40, 0.9);
+    margin-bottom: 10px;
+}
+
+.section .container:first-child h1, .section .container:first-child h2, .section .container:first-child h3 {
+    margin-top: 0;
+    font-weight: 700;
+}
+
+.section-breadcrumbs h1 {
+    color: #FAFAFA;
+    font-size: 1.6em;
+    margin-bottom: 0;
+    text-transform: none;
 }

@@ -29,7 +29,7 @@
             </div>
         </div>
     </div>*@
-    <div class="mainmenu">
+    <div class="mainmenu-wrapper">
         <div class="container">
             <nav id="mainmenu" class="mainmenu">
                 <ul>
@@ -57,7 +57,9 @@
         </div>
 
     </div>
-    <div class="container body-content">
+    @*<div class="container body-content">
+
+    </div>*@
         <div class="section section-breadcrumbs" style="padding: 7px 0;">
             <div class="container">
                 <div class="row">
@@ -72,26 +74,23 @@
         </div>
         @RenderBody()
         <hr />
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <p class="footer-copyright">
-                            <a style="color:white" href="#" target="_blank">Powered by </a> 
-                        </p>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="footer-copyright">Copyright © 2017 Verify NG. All rights reserved.</div>
-                    </div>
-                    <div class="col-md-2">
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <p class="footer-copyright">
+                        <a style="color:white" href="#" target="_blank">Powered by </a>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-copyright">Copyright © 2017 Verify NG. All rights reserved.</div>
+                </div>
+                <div class="col-md-2">
 
-                    </div>
                 </div>
             </div>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
+        </div>
+    </footer>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
