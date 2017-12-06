@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VerifyNG.Model
 {
-    class BankAccount
+    public class BankAccount
     {
         public int id { get; set; }
         public ICollection<Person> PersonId { get; set; }

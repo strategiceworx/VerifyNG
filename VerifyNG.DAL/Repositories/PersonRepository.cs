@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VerifyNG.Model
+namespace VerifyNG.DAL.Repositories
 {
-    public class PersonExamination
+    class PersonRepository
     {
     }
 }

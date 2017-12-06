@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VerifyNG.Model
 {
-    class BVN
+    public class BVN
     {
     }
 }

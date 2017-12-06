@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VerifyNG.Model
 {
-    class PersonWorkHistory
+    public class PersonWorkExperience
     {
         public int id { get; set; }
         public DateTime StartDate { get; set; }

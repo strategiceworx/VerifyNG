@@ -7,7 +7,7 @@ using VerifyNG.Model;
 
 namespace VerifyNG.Model
 {
-    class PersonEducation
+    public class PersonEducation
     {
         public int id { get; set; }
         public DateTime YearStarted { get; set; }

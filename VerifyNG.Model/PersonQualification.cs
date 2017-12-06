@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VerifyNG.Model
 {
-    class PersonQualification
+    public class PersonQualification
     {
     }
 }
