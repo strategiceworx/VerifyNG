@@ -1,0 +1,83 @@
+﻿/*body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}*/
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Start Here*/
+.mainmenu {
+    width: 100%;
+}
+
+.mainmenu.wrapper {
+    background-color: #FFF;
+    border-bottom: 4px solid #960000;
+    z-index: 4;
+}
+
+.mainmenu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.mainmenu > ul > li, .mainmenu .mainmenu-submenu-inner > li {
+    display: inline-block;
+}
+
+.mainmenu li.logo-wrapper a {
+    border-right: 1px solid #E8E8E8;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.mainmenu > ul > li > a, .mainmenu .mainmenu-submenu-inner > li > a {
+    font-size: 1.2em;
+    padding: 2.2em .5em;
+    color: #999;
+    display: inline-block;
+    text-decoration: none;
+}
+
+footer {
+    background: #003500;
+    color: #dddddd;
+    padding: 0 20px 10px 20px;
+    border-top: 4px solid #960000;
+    margin-top: 20px;
+    -webkit-box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
+    box-shadow: 0 -1px 12px rgba(0,0,0,0.4);
+    color: 0 -1px 12px rgba(0,0,0,0.4);
+    position: fixed;
+    margin-top: 50px;
+    bottom: 0;
+    width: 100%;  
+}
+
+.footer-copyright {
+    text-align: center;
+    color: #dddddd;
+    padding-top: 10px;
+    font-size: 0.9em;
+}

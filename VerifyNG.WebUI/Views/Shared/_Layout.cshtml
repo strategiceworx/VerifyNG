@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>*@
+    <div class="mainmenu">
+        <div class="container">
+            <nav id="mainmenu" class="mainmenu">
+                <ul>
+                    <li class="logo-wrapper">
+                        <a href="home" onmouseover="this.style.backgroundColor='#fff';" onmouseout="this.style.backgroundColor='#fff';" style="background-color: rgb(255, 255, 255);">
+                            <img src="https://portal.nysc.org.ng/nysc1/img/banner1.png" alt="NYSC Integrated System">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="home">Home</a>
+                    </li>
+
+                    <!-- /mainmenu-submenu -->
+
+                    <li>
+                        <a href="Transactionstatus_Remita.aspx">Payment Status </a>
+
+                    </li>
+                    <li>
+                        <a href="Contact">Contact Us</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+    <div class="container body-content">
+        <div class="section section-breadcrumbs" style="padding: 7px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 style="font-weight: normal; font-size: 2.3em;">
+                            Verify Registration Portal
+
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <p class="footer-copyright">
+                            <a style="color:white" href="#" target="_blank">Powered by </a> 
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-copyright">Copyright © 2017 Verify NG. All rights reserved.</div>
+                    </div>
+                    <div class="col-md-2">
+
+                    </div>
+                </div>
+            </div>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
