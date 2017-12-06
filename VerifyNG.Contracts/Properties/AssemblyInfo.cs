@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("VerifyNG")]
+[assembly: AssemblyTitle("VerifyNG.Contracts")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("VerifyNG")]
+[assembly: AssemblyProduct("VerifyNG.Contracts")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("1b598a4d-e322-49dd-96e8-dc5b2171507e")]
+[assembly: Guid("bcdd9c2f-867b-4959-8d34-67c73ba96d00")]
 
 // Version information for an assembly consists of the following four values:
 //

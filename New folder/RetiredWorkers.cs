@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VerifyNG.DAL
+namespace VerifyNG.Model
 {
-    public class Class1
+    class RetiredWorkers
     {
     }
 }
