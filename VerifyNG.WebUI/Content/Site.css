@@ -139,17 +139,17 @@ footer {
     }
     .panel {
     margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.75);
+    /*background-color: rgba(255, 255, 255, 0.75);
     border: 1px solid transparent;
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);*/
     }
 
     .accordion .link {
     cursor: pointer;
     display: block;
-    padding: 15px 15px 15px 42px;
+    padding: 15px 15px 15px 15px;
     color: #4D4D4D;
     font-size: 14px;
     font-weight: 700;
@@ -174,4 +174,36 @@ footer {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+}
+
+.comment-date {
+    font-size: 0.9em;
+    margin-right: 20px;
+}
+
+.verify-container{
+    width: 100%;
+    margin: 0px 15px;
+}
+
+@media (min-width: 1200px){  
+    .verify-container {
+        width: 1170px;
+    }
+}
+@media (min-width: 992px){
+    .verify-container {
+        width: 970px;
+    }
+}
+
+@media (min-width: 768px){
+    .verify-container {
+        width: 750px;
+    }
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
 }
