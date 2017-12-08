@@ -207,3 +207,31 @@ footer {
     padding-right: 15px;
     padding-left: 15px;
 }
+
+.form-sidebar .nav > li > a{
+    display: block;
+    padding: 4px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #767676;
+}
+
+.form-profile .move-right{
+    padding-left: 130px;
+    display: block;
+    position: relative;
+}
+
+.form-profile .form-control {
+    padding:5px;
+}
+
+.form-profile #avatar {
+    width: 130px;
+    margin: 10px 0 10px 0;
+    font-size: .7rem;
+    text-align: center;
+    position: absolute;
+    z-index: 30;
+    /*left: -1px;*/
+}

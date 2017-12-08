@@ -237,6 +237,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\120x120.png" />
     <Content Include="Images\benue_logo.png" />
     <Content Include="Images\logo_benue.png" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
