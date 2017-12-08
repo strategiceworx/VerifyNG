@@ -183,7 +183,7 @@ footer {
 
 .verify-container{
     width: 100%;
-    margin: 0px 15px;
+    margin: 0px 25px;
 }
 
 @media (min-width: 1200px){  
@@ -208,12 +208,22 @@ footer {
     padding-left: 15px;
 }
 
+
+
 .form-sidebar .nav > li > a{
     display: block;
     padding: 4px 20px;
     font-size: 13px;
     font-weight: 500;
-    color: #767676;
+    font: normal 1.4em "Trebuchet MS";
+    color: #121212;
+}
+
+.form-sidebar .nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #960000;
+    color: #fff !important;
+    border-radius: 4px;
 }
 
 .form-profile .move-right{
@@ -234,4 +244,30 @@ footer {
     position: absolute;
     z-index: 30;
     /*left: -1px;*/
+}
+
+p.form-control {
+    content: " ";
+    border: 0px;
+    box-shadow: none;
+}
+
+.link i.glyphicon.glyphicon-hand-right {
+    margin-right: 10px;
+}
+
+fieldset.seperator.manual {
+    border-style: solid none none none;
+    text-align: center;
+    margin: 25px 0 30px 0;
+    border-width: 1px;
+    border-color: silver;
+}
+
+fieldset.seperator.manual legend {
+    padding: 0 10px;
+    margin: 0 auto;
+    text-align: center;
+    color: #484848;
+    font-size: .9rem;
 }
