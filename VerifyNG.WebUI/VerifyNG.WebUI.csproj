@@ -213,13 +213,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\VerifyNGUserContext.cs" />
-    <Compile Include="Infrastructure\VerifyNGUserManager.cs" />
-    <Compile Include="Migrations\201712071315232_Initial.cs" />
-    <Compile Include="Migrations\201712071315232_Initial.Designer.cs">
-      <DependentUpon>201712071315232_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\VerifyNGUser.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -324,11 +317,6 @@
       <Project>{6bf0b5c4-c08b-426c-8c3a-877201ab4fef}</Project>
       <Name>VerifyNG.Model</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712071315232_Initial.resx">
-      <DependentUpon>201712071315232_Initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

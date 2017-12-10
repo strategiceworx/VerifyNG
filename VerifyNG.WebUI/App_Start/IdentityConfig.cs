@@ -11,6 +11,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using VerifyNG.WebUI.Models;
+using VerifyNG.DAL;
+using VerifyNG.DAL.Data;
 
 namespace VerifyNG.WebUI
 {

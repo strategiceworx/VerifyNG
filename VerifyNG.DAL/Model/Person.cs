@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VerifyNG.DAL;
 
 namespace VerifyNG.Model
 {
@@ -20,6 +21,8 @@ namespace VerifyNG.Model
         public string MaritalStatus { get; set; }
         public string Address { get; set; }
         public string bankVerificationNumber { get; set; }
+        
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
     }
 }

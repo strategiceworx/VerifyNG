@@ -6,6 +6,8 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using VerifyNG.WebUI.Models;
+using VerifyNG.DAL;
+using VerifyNG.DAL.Data;
 
 namespace VerifyNG.WebUI
 {

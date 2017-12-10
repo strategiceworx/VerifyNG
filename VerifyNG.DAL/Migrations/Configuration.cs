@@ -5,14 +5,14 @@ namespace VerifyNG.DAL.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<VerifyNG.DAL.Data.DataContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<VerifyNG.DAL.Data.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(VerifyNG.DAL.Data.DataContext context)
+        protected override void Seed(VerifyNG.DAL.Data.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

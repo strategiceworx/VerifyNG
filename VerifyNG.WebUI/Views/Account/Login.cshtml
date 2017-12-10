@@ -23,15 +23,13 @@
                     @Html.AntiForgeryToken()
                     <h4>Use a local account to log in.</h4>
                     <hr />
-                        <label class="panel-login">
-                            <div class="login_result">
-                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                            </div>
+                        <label class="panel-login login_result">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
                         </label>
                         <div class="form-group">
-                            @Html.LabelFor(m => m.Email, new { @class = "control-label" })
-                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                            @Html.LabelFor(m => m.TelephoneNumber, new { @class = "control-label" })
+                            @Html.TextBoxFor(m => m.TelephoneNumber, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.TelephoneNumber, "", new { @class = "text-danger" })
                         </div>
                         <div class="form-group">
                             @Html.LabelFor(m => m.Password, new { @class = "control-label" })
