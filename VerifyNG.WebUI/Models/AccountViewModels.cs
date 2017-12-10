@@ -47,6 +47,16 @@ namespace VerifyNG.WebUI.Models
     public class RegisterViewModel
     {
         [Required]
+        [DataType(DataType.Text)]
+        [Display(Name ="First Name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
+        [Required]
         [Phone]
         [StringLength(15, ErrorMessage = "The {0} must be at least {2} characters long", MinimumLength = 11)]
         [Display(Name = "Phone Number")]

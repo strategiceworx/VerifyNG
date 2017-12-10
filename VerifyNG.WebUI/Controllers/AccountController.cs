@@ -152,7 +152,13 @@ namespace VerifyNG.WebUI.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.TelephoneNumber, Email = model.TelephoneNumber, PhoneNumber= model.TelephoneNumber };
+                var user = new ApplicationUser {
+                    UserName = model.TelephoneNumber,
+                    Email = model.TelephoneNumber,
+                    PhoneNumber = model.TelephoneNumber,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName
+                };
                 var result = await UserManager.CreateAsync(user, model.Password.Date.ToString());
                 if (result.Succeeded)
                 {
