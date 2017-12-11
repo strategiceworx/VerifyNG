@@ -1,4 +1,6 @@
-﻿@{
+﻿@using VerifyNG.DAL.Model
+@model Person
+{
     ViewBag.Title = "Home Page";
 }
 
@@ -55,173 +57,200 @@
                 </div>
                 <div class="row">
                     <div class="col-md-8">
-                        <form class="form-profile">
-
-                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                <div class="panel panel-success">
-                                    <div class="panel-heading" role="tab" id="headingOne">
-                                        <h4 class="panel-title">
-                                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                Personal Details <span class="glyphicon glyphicon-pencil"></span><span>(required)</span>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                        <div class="panel-body">
-                                            <div class="row">
-                                                <div id="avatar">
-                                                    <a href="javascript:void(0);" id="add_photo" class="add-more-article" style="display:block;font-size:1em;">
-                                                        <img src="~/Images/120x120.png" class="img-thumbnail" id="candidate_photo" width="120" alt="" border="0">
-                                                        @*<br>
-                                                        <span>Add image</span>*@
+                            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-profile", role = "form" }))
+                            {
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                        <div class="panel panel-success">
+                                            <div class="panel-heading" role="tab" id="headingOne">
+                                                <h4 class="panel-title">
+                                                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        Personal Details <span class="glyphicon glyphicon-pencil"></span><span>(required)</span>
                                                     </a>
-                                                    @*<a href="javascript:void(0);" id="remove_photo" title="x remove">x</a>*@
-                                                </div>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div id="avatar">
+                                                            <a href="javascript:void(0);" id="add_photo" class="add-more-article" style="display:block;font-size:1em;">
+                                                                <img src="~/Images/120x120.png" class="img-thumbnail" id="candidate_photo" width="120" alt="" border="0">
+                                                                @*<br>
+                                            <span>Add image</span>*@
+                                                            </a>
+                                                            @*<a href="javascript:void(0);" id="remove_photo" title="x remove">x</a>*@
+                                                        </div>
 
-                                                <div class="content">
-                                                    <div class="form-row move-right">
-                                                        <div class="form-group col-md-6">
-                                                            <label for="inputEmail4">Email</label>
-                                                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
-                                                        </div>
-                                                        <div class="form-group col-md-6">
-                                                            <label for="inputPassword4">Password</label>
-                                                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                                        <div class="content">
+                                                            <div class="form-row move-right">
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="inputEmail4">Select Gender</label>
+                                                                    <select type="" class="form-control" id="inputEmail4" placeholder="Email">
+                                                                        <option></option>
+                                                                        <option>Male</option>
+                                                                        <option>Female</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="inputPassword4">Select Title</label>
+                                                                    <select type="" class="form-control" id="inputEmail4" placeholder="Email">
+                                                                        <option></option>
+                                                                        <option>Mr.</option>
+                                                                        <option>Mrs.</option>
+                                                                        <option>Miss.</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="inputPassword4">Select Title</label>
+                                                                    <select type="" class="form-control" id="inputEmail4" placeholder="Email">
+                                                                        <option></option>
+                                                                        <option>Mr.</option>
+                                                                        <option>Mrs.</option>
+                                                                        <option>Miss.</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="move-right">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="inputAddress">First Name</label>
+                                                                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="inputAddress">Last Name</label>
+                                                                    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group col-md-12">
+                                                                <label for="inputAddress2">Do you have disabilitiy</label>
+
+                                                                <select type="" class="form-control" id="inputEmail4" placeholder="Email">
+                                                                    <option></option>
+                                                                    <option>Yes.</option>
+                                                                    <option>No.</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <label for="inputCity">City</label>
+                                                                    <input type="text" class="form-control" id="inputCity">
+                                                                </div>
+                                                                <div class="form-group col-md-4">
+                                                                    <label for="inputState">State</label>
+                                                                    <select id="inputState" class="form-control">
+                                                                        <option selected="">Choose...</option>
+                                                                        <option>...</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group col-md-2">
+                                                                    <label for="inputZip">Zip</label>
+                                                                    <input type="text" class="form-control" id="inputZip">
+                                                                </div>
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary" style="margin-left: 15px;">Sign in</button>
                                                         </div>
                                                     </div>
-                                                    <div class="move-right">
-                                                        <div class="form-group col-md-12">
-                                                            <label for="inputAddress">Address</label>
-                                                            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                                                        </div>
-                                                    </div>
-                                                    <div class="form-group col-md-12">
-                                                        <label for="inputAddress2">Address 2</label>
-                                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                                                    </div>    
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-6">
-                                                            <label for="inputCity">City</label>
-                                                            <input type="text" class="form-control" id="inputCity">
-                                                        </div>
-                                                        <div class="form-group col-md-4">
-                                                            <label for="inputState">State</label>
-                                                            <select id="inputState" class="form-control">
-                                                                <option selected="">Choose...</option>
-                                                                <option>...</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group col-md-2">
-                                                            <label for="inputZip">Zip</label>
-                                                            <input type="text" class="form-control" id="inputZip">
-                                                        </div>
-                                                    </div>
-                                                    <button type="submit" class="btn btn-primary" style="margin-left: 15px;">Sign in</button>
+
                                                 </div>
                                             </div>
-
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-success">
-                                    <div class="panel-heading" role="tab" id="headingTwo">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                Work Experience <span class="glyphicon glyphicon-pencil"></span><span>(required)</span>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                        <div class="panel-body">
-                                            <div class="row">
-                                                <div class="content">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputEmail4">Email</label>
-                                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                        <div class="panel panel-success">
+                                            <div class="panel-heading" role="tab" id="headingTwo">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                        Work Experience <span class="glyphicon glyphicon-pencil"></span><span>(required)</span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="content">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputEmail4">Email</label>
+                                                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputPassword4">Password</label>
+                                                                <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                                            </div>
+                                                            <div class="form-group col-md-12">
+                                                                <label for="inputAddress">Address</label>
+                                                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                                            </div>
+                                                            <div class="form-group col-md-12">
+                                                                <label for="inputAddress2">Address 2</label>
+                                                                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary" style="margin-left: 15px;">Sign in</button>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputPassword4">Password</label>
-                                                        <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
-                                                    </div>
-                                                    <div class="form-group col-md-12">
-                                                        <label for="inputAddress">Address</label>
-                                                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                                                    </div>
-                                                    <div class="form-group col-md-12">
-                                                        <label for="inputAddress2">Address 2</label>
-                                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                                                    </div>
-                                                    <button type="submit" class="btn btn-primary" style="margin-left: 15px;">Sign in</button>
                                                 </div>
-                                            </div> 
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-success">
-                                    <div class="panel-heading" role="tab" id="headingThree">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                Education <span class="glyphicon glyphicon-pencil"></span><span>(required)</span>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                        <div class="panel-body">
-                                            <div class="row">
-                                                <div class="content">
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputEmail4">Email</label>
-                                                        <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                        <div class="panel panel-success">
+                                            <div class="panel-heading" role="tab" id="headingThree">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                        Education <span class="glyphicon glyphicon-pencil"></span><span>(required)</span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                <div class="panel-body">
+                                                    <div class="row">
+                                                        <div class="content">
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputEmail4">Email</label>
+                                                                <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                                            </div>
+                                                            <div class="form-group col-md-6">
+                                                                <label for="inputAddress">&nbsp;</label>
+                                                                <p class="form-control">&nbsp;</p>
+                                                            </div>
+                                                            <div class="form-group col-md-12">
+                                                                <label for="inputAddress">Address</label>
+                                                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                                            </div>
+                                                            <div class="form-group col-md-12">
+                                                                <label for="inputAddress2">Address 2</label>
+                                                                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                                            </div>
+                                                            <button type="submit" class="btn btn-primary" style="margin-left: 15px;">Sign in</button>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputAddress">&nbsp;</label>
-                                                        <p class="form-control">&nbsp;</p>
-                                                    </div>
-                                                    <div class="form-group col-md-12">
-                                                        <label for="inputAddress">Address</label>
-                                                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                                                    </div>
-                                                    <div class="form-group col-md-12">
-                                                        <label for="inputAddress2">Address 2</label>
-                                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-                                                    </div>
-                                                    <button type="submit" class="btn btn-primary" style="margin-left: 15px;">Sign in</button>
                                                 </div>
-                                            </div> 
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-success">
+                                            <div class="panel-heading" role="tab" id="headingThree">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                        Current Salary <span class="glyphicon glyphicon-pencil"></span><span>(required)</span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                                <div class="panel-body">
+                                                    Anim
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="panel panel-success">
+                                            <div class="panel-heading" role="tab" id="headingFive">
+                                                <h4 class="panel-title">
+                                                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                        Attachment <span class="glyphicon glyphicon-pencil"></span><span>(required)</span>
+                                                    </a>
+                                                </h4>
+                                            </div>
+                                            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                                <div class="panel-body">
+                                                    Anim
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="panel panel-success">
-                                    <div class="panel-heading" role="tab" id="headingThree">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                Current Salary <span class="glyphicon glyphicon-pencil"></span><span>(required)</span>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-                                        <div class="panel-body">
-                                            Anim
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="panel panel-success">
-                                    <div class="panel-heading" role="tab" id="headingFive">
-                                        <h4 class="panel-title">
-                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                                Attachment <span class="glyphicon glyphicon-pencil"></span><span>(required)</span>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                                        <div class="panel-body">
-                                            Anim
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
 
+                            }
                         <fieldset class="seperator manual"><legend align="center">Finished ?</legend></fieldset>
 
                     </div>

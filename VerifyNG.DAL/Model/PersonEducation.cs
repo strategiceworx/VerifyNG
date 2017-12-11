@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VerifyNG.Model;
+using VerifyNG.DAL.Model;
 
-namespace VerifyNG.Model
+namespace VerifyNG.DAL.Model
 {
     public class PersonEducation
     {

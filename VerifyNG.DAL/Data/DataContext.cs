@@ -4,7 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VerifyNG.Model;
+using VerifyNG.DAL.Model;
 
 namespace VerifyNG.DAL.Data
 {
