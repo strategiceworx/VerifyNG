@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
@@ -89,5 +90,7 @@ namespace VerifyNG.WebUI.Models
     {
         public IndexViewModel indexView { get; set; }
         public Person person { get; set; }
+
+        
     }
 }

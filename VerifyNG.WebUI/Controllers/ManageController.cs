@@ -68,14 +68,25 @@ namespace VerifyNG.WebUI.Controllers
             SetViewBagTitle(TitleCategories.Mr);
 
             var userId = User.Identity.GetUserId();
-            var vModel = new IndexPersonViewModel();
 
-            vModel.indexView.HasPassword = HasPassword();
-            vModel.indexView.TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId);
-            vModel.indexView.Logins = await UserManager.GetLoginsAsync(userId);
-            vModel.indexView.BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId);
+            IndexPersonViewModel vModel = new IndexPersonViewModel();
+            vModel.indexView = new IndexViewModel
+            {
+                HasPassword = HasPassword(),
+                PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
+                TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
+                Logins = await UserManager.GetLoginsAsync(userId),
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+            };
 
-            
+            //vModel.indexView.HasPassword = HasPassword();
+            //vModel.indexView.PhoneNumber = await UserManager.GetPhoneNumberAsync(userId);
+            //vModel.indexView.TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId);
+            //vModel.indexView.Logins = await UserManager.GetLoginsAsync(userId);
+            //vModel.indexView.BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId);
+
+
+
             //var model = new IndexViewModel
             //{
             //    HasPassword = HasPassword(),
@@ -423,7 +434,7 @@ namespace VerifyNG.WebUI.Controllers
             ViewBag.TitleType = items;
         }
 
-        
+       
         #endregion
     }
 }
