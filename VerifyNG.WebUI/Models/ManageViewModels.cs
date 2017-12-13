@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
+using VerifyNG.DAL.Model;
 
 namespace VerifyNG.WebUI.Models
 {
@@ -82,5 +83,11 @@ namespace VerifyNG.WebUI.Models
     {
         public string SelectedProvider { get; set; }
         public ICollection<System.Web.Mvc.SelectListItem> Providers { get; set; }
+    }
+
+    public class IndexPersonViewModel
+    {
+        public IndexViewModel indexView { get; set; }
+        public Person person { get; set; }
     }
 }

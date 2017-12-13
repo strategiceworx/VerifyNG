@@ -72,6 +72,14 @@
     <Compile Include="Migrations\201712112247358_v21.Designer.cs">
       <DependentUpon>201712112247358_v21.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201712130358521_v3.cs" />
+    <Compile Include="Migrations\201712130358521_v3.Designer.cs">
+      <DependentUpon>201712130358521_v3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201712130445589_v4.cs" />
+    <Compile Include="Migrations\201712130445589_v4.Designer.cs">
+      <DependentUpon>201712130445589_v4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\ActiveWorker.cs" />
     <Compile Include="Model\BankAccount.cs" />
@@ -106,6 +114,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201712112247358_v21.resx">
       <DependentUpon>201712112247358_v21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130358521_v3.resx">
+      <DependentUpon>201712130358521_v3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712130445589_v4.resx">
+      <DependentUpon>201712130445589_v4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

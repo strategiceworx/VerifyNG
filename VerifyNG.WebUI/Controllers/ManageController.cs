@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using VerifyNG.WebUI.Models;
+using System.Collections.Generic;
 
 namespace VerifyNG.WebUI.Controllers
 {
@@ -64,16 +65,26 @@ namespace VerifyNG.WebUI.Controllers
                 : "";
             ViewBag.CurrentDate = DateTime.Today;
 
+            SetViewBagTitle(TitleCategories.Mr);
+
             var userId = User.Identity.GetUserId();
-            var model = new IndexViewModel
-            {
-                HasPassword = HasPassword(),
-                PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
-                TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
-                Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
-            };
-            return View(model);
+            var vModel = new IndexPersonViewModel();
+
+            vModel.indexView.HasPassword = HasPassword();
+            vModel.indexView.TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId);
+            vModel.indexView.Logins = await UserManager.GetLoginsAsync(userId);
+            vModel.indexView.BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId);
+
+            
+            //var model = new IndexViewModel
+            //{
+            //    HasPassword = HasPassword(),
+            //    PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
+            //    TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
+            //    Logins = await UserManager.GetLoginsAsync(userId),
+            //    BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+            //};
+            return View(vModel);
         }
 
         //
@@ -385,6 +396,34 @@ namespace VerifyNG.WebUI.Controllers
             Error
         }
 
-#endregion
+        public enum TitleCategories
+        {
+            Miss,
+            Mr,
+            Mrs,
+            Dr,
+            Sir,
+            Chief,
+            Prof
+
+        }
+
+        private void SetViewBagTitle(TitleCategories selectedTitle)
+        {
+            IEnumerable<TitleCategories> values = Enum.GetValues(typeof(TitleCategories)).Cast<TitleCategories>();
+
+            IEnumerable<SelectListItem> items = from value in values select new SelectListItem
+            {
+                Text = value.ToString(),
+                Value = value.ToString(),
+                Selected = value == selectedTitle,
+
+            };
+
+            ViewBag.TitleType = items;
+        }
+
+        
+        #endregion
     }
 }
