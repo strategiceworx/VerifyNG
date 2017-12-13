@@ -8,6 +8,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using VerifyNG.WebUI.Models;
 using System.Collections.Generic;
+using VerifyNG.DAL.Model;
 
 namespace VerifyNG.WebUI.Controllers
 {
@@ -66,18 +67,28 @@ namespace VerifyNG.WebUI.Controllers
             ViewBag.CurrentDate = DateTime.Today;
 
             SetViewBagTitle(TitleCategories.Mr);
+            SetViewGender(Gender.Male);
+            SetViewLocalGovt(LocalGovernment.Ado);
+            SetViewMaritalStatus(MaritalStatus.Single);
 
             var userId = User.Identity.GetUserId();
 
-            IndexPersonViewModel vModel = new IndexPersonViewModel();
-            vModel.indexView = new IndexViewModel
-            {
-                HasPassword = HasPassword(),
-                PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
-                TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
-                Logins = await UserManager.GetLoginsAsync(userId),
-                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
-            };
+            //IndexPersonViewModel vModel = new IndexPersonViewModel();
+
+            //Person person = new Person();
+            //person.FirstName = "Adeolu";
+            //person.LastName = "Adeyemi";
+
+
+            //vModel.indexView = new IndexViewModel
+            //{
+            //    HasPassword = HasPassword(),
+            //    PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
+            //    TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
+            //    Logins = await UserManager.GetLoginsAsync(userId),
+            //    BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+            //};
+
 
             //vModel.indexView.HasPassword = HasPassword();
             //vModel.indexView.PhoneNumber = await UserManager.GetPhoneNumberAsync(userId);
@@ -87,15 +98,15 @@ namespace VerifyNG.WebUI.Controllers
 
 
 
-            //var model = new IndexViewModel
-            //{
-            //    HasPassword = HasPassword(),
-            //    PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
-            //    TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
-            //    Logins = await UserManager.GetLoginsAsync(userId),
-            //    BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
-            //};
-            return View(vModel);
+            var model = new IndexViewModel
+            {
+                HasPassword = HasPassword(),
+                PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
+                TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
+                Logins = await UserManager.GetLoginsAsync(userId),
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
+            };
+            return View(model);
         }
 
         //
@@ -434,7 +445,60 @@ namespace VerifyNG.WebUI.Controllers
             ViewBag.TitleType = items;
         }
 
-       
+
+        public enum LocalGovernment
+        {
+            Apa, Ado, Buruku, Gboko, Guma, GwerEast, GwerWest, KatsinaAla, Konshisha, Kwande, Logo, Makurdi, Obi, Ogbadibo, Ohimini, Oju, Okpokwu, Oturkpo, Tarka, Ukum, Ushongo, Vandeikya, Others
+        }
+
+        private void SetViewLocalGovt(LocalGovernment selectedLGA)
+        {
+            IEnumerable<LocalGovernment> values = Enum.GetValues(typeof(LocalGovernment)).Cast<LocalGovernment>();
+            IEnumerable<SelectListItem> items = from value in values select new SelectListItem
+            {
+                Text = value.ToString(),
+                Value = value.ToString(),
+                Selected = value == selectedLGA,
+            };
+
+
+            ViewBag.LGAs = items;
+        }
+
+        public enum MaritalStatus {
+            Single,Married,Divorced
+        }
+        
+        private void SetViewMaritalStatus(MaritalStatus selectedStatus)
+        {
+            IEnumerable<MaritalStatus> values = Enum.GetValues(typeof(MaritalStatus)).Cast<MaritalStatus>();
+            IEnumerable<SelectListItem> items = from value in values select new SelectListItem
+            {
+                Text = value.ToString(),
+                Value = value.ToString(),
+                Selected = value == selectedStatus,
+            };
+
+            ViewBag.MaritalStatus = items;
+        }     
+        
+        public enum Gender
+        {
+            Male, Female
+        }  
+
+        private void SetViewGender(Gender selectedGender)
+        {
+            IEnumerable<Gender> values = Enum.GetValues(typeof(Gender)).Cast<Gender>();
+            IEnumerable<SelectListItem> items = from value in values select new SelectListItem
+            {
+                Text = value.ToString(),
+                Value = value.ToString(),
+                Selected = value == selectedGender
+            };
+
+            ViewBag.Gender = items;
+        }
         #endregion
     }
 }
